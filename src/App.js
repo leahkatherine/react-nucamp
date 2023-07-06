@@ -1,3 +1,6 @@
+import { Routes, Route} from 'react-router-dom';
+import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage';
 import React from 'react';
 import { Container, Navbar, NavbarBrand } from 'reactstrap';
 import NucampLogo from './app/assets/img/logo.png';
@@ -15,7 +18,11 @@ function App() {
                   </NavbarBrand>
               </Container>
           </Navbar>
-          <CampsitesDirectoryPage />
+          <Routes>
+                <Route path='/'  element={<HomePage/>} />
+                <Route path='contact' element={<ContactPage/>}/>
+                <Route path='directory' element={<CampsitesDirectoryPage/>}/>
+          </Routes>
           <Footer/>
         </div>
     );
