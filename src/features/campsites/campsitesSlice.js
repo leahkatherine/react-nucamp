@@ -13,18 +13,18 @@ const campsitesSlice = createSlice({
 export const campsitesReducer = campsitesSlice.reducer;
 //since the key and the object name are the same you can write ititial state once
 
-export const selectAllCampsites = () => {
-    return CAMPSITES;
+export const selectAllCampsites = (state) => {
+    return state.campsites.campsitesArray;
 };
 //This code is just kept for an example for your future use 
 //export const selectRandomCampsite = () => {
 //    return CAMPSITES[Math.floor(CAMPSITES.length * Math.random())];
 //};
 
-export const selectCampsiteById = (id) => {
-    return CAMPSITES.find((campsite) => campsite.id === parseInt(id));
+export const selectCampsiteById = (id) => (state) => {
+    return state.campsites.campsitesArray.find((campsite) => campsite.id === parseInt(id));
 };
 
-export const selectFeaturedCampsite = () => {
-    return CAMPSITES.find((campsite) => campsite.featured);
+export const selectFeaturedCampsite = (state) => {
+    return state.campsites.campsitesArray.find((campsite) => campsite.featured);
 };
