@@ -1,4 +1,17 @@
+import { createSlice } from '@reduxjs/toolkit';
 import { CAMPSITES } from '../../app/shared/CAMPSITES';
+
+const initialState = {
+    campsitesArray: CAMPSITES
+};
+
+const campsitesSlice = createSlice({
+    name: 'campsites',
+    initialState
+});
+
+export const campsitesReducer = campsitesSlice.reducer;
+//since the key and the object name are the same you can write ititial state once
 
 export const selectAllCampsites = () => {
     return CAMPSITES;
